@@ -1,0 +1,16 @@
+body {
+    background-color: #B8860B;
+    }
+
+h1,h3{
+    font-size: 26px;
+}
+
+.undevoured{
+    float: left;
+}
+
+.devoured{
+    float:right;
+}
+
