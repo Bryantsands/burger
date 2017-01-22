@@ -1,25 +1,36 @@
-var express = require('express')
+var express = require('express');
 var router = express.Router();
 
-var burger = require('../models/burger')
+var burger = require('./../models/burger.js');
 
 //routes on routes on routes
 router.use(express.static('public'));
 
-router.get('/', function(req, res){
+// router.get('/', function(req, res){
+//     res.redirect('/burgers');
+// });
+
+router.get('/', function(request, response){
     burger.getBurgers(function(data){
-        response.render('index', {burgers: data});
+        // var hbsObject = {
+        //     burgers: data
+        // };
+        // console.log(hbsObject)
+        // console.log('error at router.get')
+        response.render('index', { burgers: data});
     });
 });
 
-router.post('/', function(req, res){
-    burger.addBurgers(request.body.burger_name, function(){
-        response.redirect('/')
+router.post('/', function(request, response){
+    burger.addBurger(request.body.burger_name, function(){
+        console.log('error at router.post')
+        response.redirect('/');
     });
 });
 
-router.put('/:id', function(req, res){
+router.put('/:id', function(request, response){
     burger.devourBurger(request.params.id, function(){
+       console.log('error at router.put')
         response.redirect('/');
     });
 });
