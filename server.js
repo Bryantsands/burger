@@ -8,7 +8,7 @@ var controller = require('./controllers/burgers_controller.js');
 var app = express();
 var port = 3000;
 
-debugger;
+
 
 // Serve static content for the app from the "public" directory in the application directory.
 // app.use(express.static(process.cwd() + '/public'));
