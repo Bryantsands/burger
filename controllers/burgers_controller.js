@@ -6,9 +6,7 @@ var burger = require('./../models/burger.js');
 //routes on routes on routes
 router.use(express.static('public'));
 
-// router.get('/', function(req, res){
-//     res.redirect('/burgers');
-// });
+
 
 router.get('/', function(request, response){
     burger.getBurgers(function(data){
